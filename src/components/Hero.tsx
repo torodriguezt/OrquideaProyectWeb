@@ -33,13 +33,13 @@ const Hero = () => {
   }
 
   return (
-    <section id="hero" className="min-h-screen relative overflow-hidden">
-      {/* Overlay con efecto de cristal */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-purple-900/40 to-pink-900/20 backdrop-blur-sm" />
+    <section id="hero" className="min-h-screen relative overflow-hidden bg-gradient-to-br from-warm-50 to-warm-100">
+      {/* Overlay sutil */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-primary-50/30 to-accent-50/20" />
       
-      {/* Partículas flotantes */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(30)].map((_, i) => (
+      {/* Elementos decorativos sutiles */}
+      <div className="absolute inset-0 overflow-hidden opacity-20">
+        {[...Array(15)].map((_, i) => (
           <motion.div
             key={i}
             initial={{ 
@@ -48,16 +48,16 @@ const Hero = () => {
               opacity: 0
             }}
             animate={{ 
-              y: [0, -100, 0],
-              opacity: [0, 0.8, 0],
-              scale: [0.5, 1.5, 0.5]
+              y: [0, -50, 0],
+              opacity: [0, 0.3, 0],
+              scale: [0.5, 1, 0.5]
             }}
             transition={{
-              duration: 3 + Math.random() * 4,
+              duration: 4 + Math.random() * 2,
               repeat: Infinity,
               delay: Math.random() * 3
             }}
-            className="absolute w-1 h-1 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full shadow-lg"
+            className="absolute w-2 h-2 bg-gradient-to-r from-primary-400 to-accent-400 rounded-full"
           />
         ))}
       </div>
@@ -68,20 +68,20 @@ const Hero = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="text-center text-white max-w-4xl"
+          className="text-center text-primary-900 max-w-4xl"
         >
           <motion.div
             variants={itemVariants}
             className="mb-8"
           >
-            <HeartIcon className="w-20 h-20 mx-auto mb-6 text-pink-300" />
-            <h1 className="text-6xl md:text-8xl font-display font-bold mb-4">
-              <span className="text-gradient bg-gradient-to-r from-pink-300 to-amber-300 bg-clip-text text-transparent">
+            <HeartIcon className="w-16 h-16 mx-auto mb-6 text-accent-500" />
+            <h1 className="text-5xl md:text-7xl font-display font-bold mb-4">
+              <span className="gradient-text">
                 Orquídea
               </span>
             </h1>
-            <p className="text-xl md:text-2xl opacity-90 mb-2">
-              Un símbolo de resistencia y fortaleza
+            <p className="text-lg md:text-xl text-primary-600 mb-2">
+              Análisis de violencia contra la mujer en Colombia
             </p>
           </motion.div>
 
@@ -89,13 +89,13 @@ const Hero = () => {
             variants={itemVariants}
             className="space-y-6"
           >
-            <h2 className="text-3xl md:text-4xl font-display font-semibold leading-tight">
-              Alzando la voz contra la{' '}
-              <span className="text-pink-300">violencia</span>
+            <h2 className="text-2xl md:text-3xl font-display font-semibold leading-tight text-primary-800">
+              Datos y análisis sobre{' '}
+              <span className="text-accent-600">violencia de género</span>
             </h2>
-            <p className="text-lg md:text-xl opacity-80 max-w-2xl mx-auto leading-relaxed">
-              Juntas construimos un mundo donde cada mujer pueda florecer sin miedo, 
-              donde su voz sea escuchada y respetada.
+            <p className="text-base md:text-lg text-primary-600 max-w-2xl mx-auto leading-relaxed">
+              Plataforma de información y estadísticas sobre la situación de la mujer 
+              en los diferentes departamentos de Colombia.
             </p>
           </motion.div>
 
@@ -107,22 +107,22 @@ const Hero = () => {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               onClick={scrollToNext}
-              className="group px-8 py-4 bg-white text-purple-900 rounded-full font-semibold text-lg hover:bg-opacity-90 transition-all duration-300 shadow-lg"
+              className="group px-8 py-4 bg-primary-600 text-white rounded-full font-semibold text-lg hover:bg-primary-700 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               <span className="flex items-center gap-2">
                 <ShieldCheckIcon className="w-5 h-5" />
-                Conoce más
+                Ver estadísticas
               </span>
             </motion.button>
             
             <motion.button
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="group px-8 py-4 border-2 border-white text-white rounded-full font-semibold text-lg hover:bg-white hover:text-purple-900 transition-all duration-300"
+              className="group px-8 py-4 border-2 border-primary-600 text-primary-600 rounded-full font-semibold text-lg hover:bg-primary-600 hover:text-white transition-all duration-300"
             >
               <span className="flex items-center gap-2">
                 <HeartIcon className="w-5 h-5" />
-                Únete a la causa
+                Ver análisis
               </span>
             </motion.button>
           </motion.div>
@@ -134,13 +134,13 @@ const Hero = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white cursor-pointer"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-primary-600 cursor-pointer"
         onClick={scrollToNext}
       >
         <div className="flex flex-col items-center">
-          <span className="text-sm opacity-80 mb-2">Desliza para continuar</span>
+          <span className="text-sm mb-2">Desliza para continuar</span>
           <motion.div
-            animate={{ y: [0, 10, 0] }}
+            animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           >
             <ChevronDownIcon className="w-6 h-6" />

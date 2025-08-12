@@ -12,9 +12,8 @@ const Navigation = ({ activeSection }: NavigationProps) => {
   const navigationItems = [
     { id: 'hero', label: 'Inicio' },
     { id: 'statistics', label: 'Estadísticas' },
-    { id: 'stories', label: 'Historias' },
-    { id: 'prevention', label: 'Prevención' },
-    { id: 'resources', label: 'Recursos' }
+    { id: 'map', label: 'Mapa' },
+    { id: 'historical', label: 'Historia' }
   ]
 
   const scrollToSection = (sectionId: string) => {
@@ -31,7 +30,7 @@ const Navigation = ({ activeSection }: NavigationProps) => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.5 }}
-        className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/10 border-b border-white/20"
+        className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-warm-50/90 border-b border-primary-200"
       >
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
@@ -41,8 +40,8 @@ const Navigation = ({ activeSection }: NavigationProps) => {
               className="flex items-center gap-2 cursor-pointer"
               onClick={() => scrollToSection('hero')}
             >
-              <HeartIcon className="w-8 h-8 text-pink-300" />
-              <span className="text-xl font-display font-bold text-white">
+              <HeartIcon className="w-8 h-8 text-accent-500" />
+              <span className="text-xl font-display font-bold text-primary-900">
                 Orquídea
               </span>
             </motion.div>
@@ -57,15 +56,15 @@ const Navigation = ({ activeSection }: NavigationProps) => {
                   onClick={() => scrollToSection(item.id)}
                   className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 ${
                     activeSection === item.id
-                      ? 'text-pink-300'
-                      : 'text-white hover:text-pink-200'
+                      ? 'text-accent-600'
+                      : 'text-primary-700 hover:text-accent-500'
                   }`}
                 >
                   {item.label}
                   {activeSection === item.id && (
                     <motion.div
                       layoutId="activeIndicator"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink-300 rounded-full"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent-500 rounded-full"
                     />
                   )}
                 </motion.button>
@@ -77,7 +76,7 @@ const Navigation = ({ activeSection }: NavigationProps) => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden text-white p-2"
+              className="md:hidden text-primary-700 p-2"
             >
               {isMenuOpen ? (
                 <XMarkIcon className="w-6 h-6" />
@@ -96,7 +95,7 @@ const Navigation = ({ activeSection }: NavigationProps) => {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: '100%' }}
           transition={{ type: 'tween', duration: 0.3 }}
-          className="fixed top-0 right-0 bottom-0 z-40 w-80 bg-gradient-to-b from-purple-900 to-purple-800 backdrop-blur-md md:hidden"
+          className="fixed top-0 right-0 bottom-0 z-40 w-80 bg-gradient-to-b from-primary-800 to-primary-900 backdrop-blur-md md:hidden"
         >
           <div className="p-8 pt-20">
             <div className="space-y-6">
@@ -110,8 +109,8 @@ const Navigation = ({ activeSection }: NavigationProps) => {
                   onClick={() => scrollToSection(item.id)}
                   className={`block w-full text-left px-4 py-3 text-lg font-medium transition-all duration-300 rounded-lg ${
                     activeSection === item.id
-                      ? 'text-pink-300 bg-white/10'
-                      : 'text-white hover:text-pink-200 hover:bg-white/5'
+                      ? 'text-accent-400 bg-white/10'
+                      : 'text-white hover:text-accent-300 hover:bg-white/5'
                   }`}
                 >
                   {item.label}

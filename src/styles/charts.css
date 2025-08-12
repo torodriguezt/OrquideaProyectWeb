@@ -1,0 +1,84 @@
+/* Estilos adicionales para los gráficos y mapas */
+
+/* Recharts custom styles */
+.recharts-responsive-container {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.recharts-tooltip-wrapper {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Estilos para el componente Map */
+.map-container {
+  position: relative;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.region-marker {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.region-marker:hover {
+  transform: scale(1.1);
+}
+
+/* Animaciones adicionales */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s infinite;
+}
+
+/* Efectos de glassmorphism mejorados */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(71, 85, 105, 0.1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 40px rgba(71, 85, 105, 0.15);
+}
+
+/* Estilos para indicadores de carga */
+.loading-indicator {
+  background: linear-gradient(45deg, #475569, #ea7520, #475569);
+  background-size: 200% 200%;
+  animation: gradient-shift 2s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse-slow,
+  .loading-indicator {
+    animation: none;
+  }
+}
+
+/* Estilos responsive mejorados */
+@media (max-width: 768px) {
+  .recharts-responsive-container {
+    font-size: 12px;
+  }
+  
+  .glass-card {
+    backdrop-filter: blur(10px);
+  }
+}
