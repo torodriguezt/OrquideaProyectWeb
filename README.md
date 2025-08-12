@@ -6,11 +6,10 @@
 
 **Proyecto Orquídea** es una aplicación web desarrollada para presentar de manera clara y profesional datos estadísticos sobre la violencia de género en Colombia. El proyecto está enfocado en la educación, investigación y concienciación social a través de visualizaciones de datos interactivas.
 
-### � Objetivos
+### Objetivos
 
 - **Visualización de Datos**: Presentar estadísticas actualizadas sobre violencia de género por departamentos
 - **Análisis Geográfico**: Mapas interactivos con distribución territorial de casos
-- **Contexto Histórico**: Línea de tiempo de avances en derechos de las mujeres en Colombia
 - **Acceso a la Información**: Datos presentados de forma clara y accesible
 
 ## 🚀 Tecnologías Utilizadas
@@ -31,7 +30,7 @@
 - **D3-geo** - Mapas geográficos
 - **SVG Maps** - Mapas vectoriales de Colombia
 
-## �️ Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 src/
@@ -73,15 +72,6 @@ src/
 - Navegación intuitiva
 - Colores neutros y profesionales
 
-## 🎨 Paleta de Colores
-
-El diseño utiliza una paleta de colores **neutral y profesional**:
-
-- **Primarios**: Grises (#475569, #334155)
-- **Acentos**: Naranja (#ea7520, #f97316)
-- **Fondos**: Beige cálido (#fdfcfb, #fbf9f7)
-- **Texto**: Grises oscuros para legibilidad
-
 ## 🔧 Instalación y Configuración
 
 ### Prerrequisitos
@@ -116,20 +106,13 @@ npm run preview     # Vista previa de la construcción
 npm run lint        # Verificación de código
 ```
 
-## 📈 Datos y Fuentes
+## 📈 Fuentes de Información
 
-### Fuentes de Información
 - Instituto Nacional de Medicina Legal y Ciencias Forenses
 - Observatorio de Violencia de Género
 - DANE (Departamento Administrativo Nacional de Estadística)
 - MinSalud - Ministerio de Salud y Protección Social
 
-### Tipos de Datos Incluidos
-- **Casos reportados por departamento** (2023-2024)
-- **Tasas por 100,000 mujeres**
-- **Distribución por tipo de violencia**
-- **Tendencias temporales**
-- **Información demográfica**
 
 ## 🚀 Despliegue
 
