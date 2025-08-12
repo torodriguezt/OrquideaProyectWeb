@@ -1,137 +1,211 @@
-# React + TypeScript + Vite
+# 🌸 Proyecto Orquídea - Análisis de Violencia de Género en Colombia
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Una plataforma web interactiva para la visualización y análisis de datos sobre violencia contra las mujeres en Colombia.
 
-Currently, two official plugins are available:
+## 📋 Descripción del Proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Proyecto Orquídea** es una aplicación web desarrollada para presentar de manera clara y profesional datos estadísticos sobre la violencia de género en Colombia. El proyecto está enfocado en la educación, investigación y concienciación social a través de visualizaciones de datos interactivas.
 
-# Conciencia Mujer - Webapp de Concientización
+### � Objetivos
 
-Una aplicación web interactiva diseñada para crear conciencia sobre la violencia contra las mujeres, desarrollada con React, TypeScript y Tailwind CSS.
-
-## 🌟 Características
-
-- **Diseño Responsive**: Optimizado para todos los dispositivos
-- **Animaciones Suaves**: Implementadas con Framer Motion
-- **Interfaz Moderna**: Efectos glass morphism y gradientes
-- **Contenido Educativo**: Estadísticas, historias y recursos de apoyo
-- **Accesibilidad**: Diseño inclusivo y navegación intuitiva
+- **Visualización de Datos**: Presentar estadísticas actualizadas sobre violencia de género por departamentos
+- **Análisis Geográfico**: Mapas interactivos con distribución territorial de casos
+- **Contexto Histórico**: Línea de tiempo de avances en derechos de las mujeres en Colombia
+- **Acceso a la Información**: Datos presentados de forma clara y accesible
 
 ## 🚀 Tecnologías Utilizadas
 
-- **Frontend**: React 19, TypeScript
-- **Styling**: Tailwind CSS
-- **Animaciones**: Framer Motion
-- **Iconos**: Heroicons
-- **Build Tool**: Vite
-- **Despliegue**: GitHub Pages
+### Frontend
+- **React 19** - Framework de JavaScript
+- **TypeScript** - Tipado estático
+- **Vite** - Herramienta de construcción y desarrollo
+- **Tailwind CSS** - Framework de CSS utilitario
 
-## 📱 Secciones
+### Animaciones y UX
+- **Framer Motion** - Animaciones fluidas y transiciones
+- **Heroicons** - Iconografía moderna
+- **Efectos Glass Morphism** - Diseño visual moderno
 
-1. **Hero**: Página principal con mensaje impactante
-2. **Estadísticas**: Datos relevantes sobre violencia de género
-3. **Historias**: Testimonios y experiencias
-4. **Prevención**: Estrategias y señales de alarma
-5. **Recursos**: Líneas de ayuda y centros de apoyo
+### Visualización de Datos
+- **Recharts** - Gráficos y visualizaciones interactivas
+- **D3-geo** - Mapas geográficos
+- **SVG Maps** - Mapas vectoriales de Colombia
+
+## �️ Estructura del Proyecto
+
+```
+src/
+├── components/
+│   ├── Hero.tsx              # Página principal
+│   ├── Statistics.tsx        # Gráficos y estadísticas
+│   ├── Map.tsx              # Mapa interactivo de Colombia
+│   ├── Historical.tsx       # Línea de tiempo histórica
+│   ├── Navigation.tsx       # Barra de navegación
+│   ├── Footer.tsx           # Pie de página
+│   └── ...
+├── styles/
+│   ├── index.css           # Estilos globales
+│   └── charts.css          # Estilos para gráficos
+└── App.tsx                 # Componente principal
+```
+
+## 📊 Características Principales
+
+### 1. **Dashboard de Estadísticas**
+- Gráficos de barras con casos por departamento
+- Gráficos circulares de distribución por tipo de violencia
+- Gráficos de línea con tendencias temporales
+- Gráficos horizontales de comparación regional
+
+### 2. **Mapa Interactivo de Colombia**
+- Visualización por departamentos
+- Códigos de color según nivel de incidencia
+- Información detallada al hacer clic
+- Top 5 de departamentos más afectados
+
+### 3. **Línea de Tiempo Histórica**
+- Hitos importantes en derechos de las mujeres
+- Legislación relevante (Ley 1257, Ley Rosa Elvira Cely)
+- Avances institucionales
+
+### 4. **Diseño Responsivo**
+- Optimizado para dispositivos móviles
+- Navegación intuitiva
+- Colores neutros y profesionales
 
 ## 🎨 Paleta de Colores
 
-El diseño utiliza una paleta de colores feminista que incluye:
-- Violeta (#8b5cf6)
-- Púrpura (#a855f7)
-- Verde (#059669)
-- Esmeralda (#10b981)
+El diseño utiliza una paleta de colores **neutral y profesional**:
 
-## 🔧 Instalación y Desarrollo
+- **Primarios**: Grises (#475569, #334155)
+- **Acentos**: Naranja (#ea7520, #f97316)
+- **Fondos**: Beige cálido (#fdfcfb, #fbf9f7)
+- **Texto**: Grises oscuros para legibilidad
+
+## 🔧 Instalación y Configuración
+
+### Prerrequisitos
+- Node.js (versión 18 o superior)
+- npm o yarn
+
+### Pasos de Instalación
 
 ```bash
-# Clonar el repositorio
+# 1. Clonar el repositorio
 git clone https://github.com/torodriguezt/OrquideaProyectWeb.git
 
-# Navegar al directorio
+# 2. Navegar al directorio del proyecto
 cd OrquideaProyectWeb
 
-# Instalar dependencias
+# 3. Instalar dependencias
 npm install
 
-# Ejecutar en desarrollo
+# 4. Ejecutar en modo desarrollo
 npm run dev
 
-# Construir para producción
-npm run build
+# 5. Abrir en el navegador
+# La aplicación estará disponible en http://localhost:3000/OrquideaProyectWeb/
 ```
 
-## 📦 Scripts Disponibles
+### Scripts Disponibles
 
-- `npm run dev`: Inicia el servidor de desarrollo
-- `npm run build`: Construye la aplicación para producción
-- `npm run preview`: Previsualiza la build de producción
-- `npm run lint`: Ejecuta el linter
+```bash
+npm run dev         # Servidor de desarrollo
+npm run build       # Construcción para producción
+npm run preview     # Vista previa de la construcción
+npm run lint        # Verificación de código
+```
+
+## 📈 Datos y Fuentes
+
+### Fuentes de Información
+- Instituto Nacional de Medicina Legal y Ciencias Forenses
+- Observatorio de Violencia de Género
+- DANE (Departamento Administrativo Nacional de Estadística)
+- MinSalud - Ministerio de Salud y Protección Social
+
+### Tipos de Datos Incluidos
+- **Casos reportados por departamento** (2023-2024)
+- **Tasas por 100,000 mujeres**
+- **Distribución por tipo de violencia**
+- **Tendencias temporales**
+- **Información demográfica**
 
 ## 🚀 Despliegue
 
-La aplicación se despliega automáticamente en GitHub Pages cuando se hace push a la rama `main`.
+### GitHub Pages
+El proyecto se despliega automáticamente en GitHub Pages:
+```
+URL: https://torodriguezt.github.io/OrquideaProyectWeb/
+```
+
+### Configuración de Despliegue
+El archivo `vite.config.ts` está configurado para GitHub Pages:
+```typescript
+export default defineConfig({
+  base: '/OrquideaProyectWeb/',
+  // ... otras configuraciones
+})
+```
 
 ## 🤝 Contribución
 
-Las contribuciones son bienvenidas. Por favor:
+### Cómo Contribuir
+1. **Fork** el repositorio
+2. Crear una rama para tu feature (`git checkout -b feature/nueva-funcionalidad`)
+3. Hacer commit de los cambios (`git commit -m 'Agregar nueva funcionalidad'`)
+4. Push a la rama (`git push origin feature/nueva-funcionalidad`)
+5. Crear un **Pull Request**
 
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
+### Estándares de Código
+- Usar TypeScript para tipado estático
+- Seguir las convenciones de naming de React
+- Documentar componentes complejos
+- Mantener la accesibilidad web
 
-## 📄 Licencia
+## � Compatibilidad
 
-Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+### Navegadores Soportados
+- Chrome 90+
+- Firefox 88+
+- Safari 14+
+- Edge 90+
 
-## 🆘 Recursos de Ayuda
+### Dispositivos
+- ✅ Desktop (1920px+)
+- ✅ Tablet (768px - 1024px)
+- ✅ Móvil (320px - 767px)
 
-Si necesitas ayuda inmediata:
-- **Emergencias**: 911
-- **Línea Nacional**: 123-456-7890
-- **Chat Online**: www.ayuda-mujer.org
+## �📄 Licencia
 
-## 🎯 Propósito
+Este proyecto está bajo la **Licencia MIT** - ver el archivo [LICENSE](LICENSE) para más detalles.
 
-Esta aplicación fue creada con el propósito de:
-- Crear conciencia sobre la violencia de género
-- Proporcionar recursos de ayuda
-- Educar sobre prevención
-- Dar voz a las sobrevivientes
+## 🙏 Reconocimientos
+
+### Financiamiento
+- **MinCiencias** - Ministerio de Ciencia, Tecnología e Innovación de Colombia
+
+### Agradecimientos
+- Instituto Nacional de Medicina Legal y Ciencias Forenses
+- Observatorio de Violencia de Género
+- Comunidad de desarrolladores de React y TypeScript
+
+## 📞 Contacto y Soporte
+
+### En Caso de Emergencia
+- **Línea Nacional**: 155
+- **Policía Nacional**: 123
+- **Fiscalía General**: 122
+
+### Recursos de Apoyo
+- **Línea Púrpura**: 018000112137
+- **Casa de la Mujer**: 3007397680
+- **Profamilia**: 018000110426
+
+## ⚠️ Nota Importante
+
+Este proyecto tiene fines **educativos y de investigación**. Los datos presentados corresponden a información oficial disponible públicamente. En caso de situaciones de emergencia real, contacte inmediatamente a las autoridades competentes.
 
 ---
 
-**Nota**: Esta es una aplicación educativa. En caso de emergencia real, contacta inmediatamente a las autoridades locales.
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+**Desarrollado con ❤️ para crear conciencia y promover la igualdad de género en Colombia**
