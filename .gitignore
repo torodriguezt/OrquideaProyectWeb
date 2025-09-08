@@ -25,3 +25,5 @@ conciencia-mujer/
 *.njsproj
 *.sln
 *.sw?
+*.rds
+*.csv

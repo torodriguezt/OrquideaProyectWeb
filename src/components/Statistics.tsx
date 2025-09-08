@@ -1,7 +1,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useEffect, useState } from 'react'
 import { ChartBarIcon, ExclamationTriangleIcon, HeartIcon, UsersIcon, MapPinIcon } from '@heroicons/react/24/outline'
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line } from 'recharts'
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, LineChart, Line } from 'recharts'
 
 const Statistics = () => {
   const ref = useRef(null)
@@ -14,43 +14,54 @@ const Statistics = () => {
   })
 
   const statistics = [
-    { icon: ExclamationTriangleIcon, value: 51, suffix: '%', label: 'de las mujeres en Colombia han experimentado algún tipo de violencia', color: 'text-red-600' },
-    { icon: ChartBarIcon, value: 91, suffix: '%', label: 'de los casos de violencia intrafamiliar no son denunciados', color: 'text-orange-600' },
-    { icon: HeartIcon, value: 622, suffix: ' feminicidios', label: 'fueron registrados en Colombia durante 2023', color: 'text-red-700' },
-    { icon: UsersIcon, value: 89, suffix: '%', label: 'de los feminicidios son cometidos por parejas o exparejas', color: 'text-blue-600' }
+    { icon: ExclamationTriangleIcon, value: 862195, suffix: ' casos', label: 'de violencia contra la mujer registrados en SIVIGILA', color: 'text-red-600' },
+    { icon: ChartBarIcon, value: 30.1, suffix: '%', label: 'de los casos corresponden al grupo etario de 29-59 años', color: 'text-orange-600' },
+    { icon: HeartIcon, value: 122775, suffix: ' casos', label: 'fueron registrados en 2023, el año con mayor reporte', color: 'text-red-700' },
+    { icon: UsersIcon, value: 26.3, suffix: '%', label: 'de los casos corresponden al grupo de 18-28 años', color: 'text-blue-600' }
   ]
 
   const violenceByAge = [
-    { age: '14-17', percentage: 28, count: 3420 },
-    { age: '18-24', percentage: 45, count: 5680 },
-    { age: '25-34', percentage: 52, count: 7240 },
-    { age: '35-44', percentage: 48, count: 6100 },
-    { age: '45-54', percentage: 38, count: 4520 },
-    { age: '55+', percentage: 25, count: 2890 }
+    { age: '29-59', percentage: 30.1, count: 259919 },
+    { age: '18-28', percentage: 26.3, count: 226978 },
+    { age: '12-17', percentage: 21.0, count: 181007 },
+    { age: '0-5', percentage: 10.4, count: 89534 },
+    { age: '6-11', percentage: 8.5, count: 73595 },
+    { age: '60-84', percentage: 3.3, count: 28109 },
+    { age: '85+', percentage: 0.4, count: 3053 }
   ]
 
   const reportingData = [
-    { name: 'Denunciados', value: 9, color: '#475569' },
-    { name: 'No Denunciados', value: 91, color: '#ea7520' }
+    { name: 'Heterosexual', value: 64.4, color: '#475569' },
+    { name: 'Sin información', value: 25.4, color: '#94a3b8' },
+    { name: 'Otra', value: 6.9, color: '#ea7520' },
+    { name: 'OSIEG no hegemónicas', value: 3.3, color: '#f97316' }
   ]
 
   const departmentData = [
-    { department: 'Bogotá', cases: 4250 },
-    { department: 'Antioquia', cases: 3890 },
-    { department: 'Valle', cases: 2680 },
-    { department: 'Cundinamarca', cases: 2420 },
-    { department: 'Atlántico', cases: 1980 },
-    { department: 'Santander', cases: 1750 },
-    { department: 'Nariño', cases: 1620 },
-    { department: 'Tolima', cases: 1450 }
+    { department: 'Antioquia', cases: 144064 },
+    { department: 'Bogotá D.C.', cases: 105553 },
+    { department: 'Valle del Cauca', cases: 101495 },
+    { department: 'Cundinamarca', cases: 65329 },
+    { department: 'Santander', cases: 42608 },
+    { department: 'Huila', cases: 39736 },
+    { department: 'Nariño', cases: 29326 },
+    { department: 'Atlántico', cases: 27090 },
+    { department: 'Boyacá', cases: 26951 },
+    { department: 'Bolívar', cases: 24176 }
   ]
 
   const trendData = [
-    { year: '2019', cases: 2567, feminicidios: 287 },
-    { year: '2020', cases: 3104, feminicidios: 320 },
-    { year: '2021', cases: 4289, feminicidios: 456 },
-    { year: '2022', cases: 5834, feminicidios: 612 },
-    { year: '2023', cases: 6742, feminicidios: 622 }
+    { year: '2013', cases: 34170 },
+    { year: '2014', cases: 46894 },
+    { year: '2015', cases: 56725 },
+    { year: '2016', cases: 71978 },
+    { year: '2017', cases: 74204 },
+    { year: '2018', cases: 85704 },
+    { year: '2019', cases: 91194 },
+    { year: '2020', cases: 78301 },
+    { year: '2021', cases: 90694 },
+    { year: '2022', cases: 109556 },
+    { year: '2023', cases: 122775 }
   ]
 
   useEffect(() => {
@@ -67,10 +78,10 @@ const Statistics = () => {
           setAnimatedValues(prev => ({ ...prev, [key]: Math.round(currentValue) }))
         }, 20)
       }
-      animateValue('stat1', 51)
-      animateValue('stat2', 91)
-      animateValue('stat3', 622)
-      animateValue('stat4', 89)
+      animateValue('stat1', 862195)
+      animateValue('stat2', 30.1)
+      animateValue('stat3', 122775)
+      animateValue('stat4', 26.3)
     }
   }, [isInView])
 
@@ -111,7 +122,7 @@ const Statistics = () => {
         {/* Gráficos */}
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-16">
           {/* Barras edad */}
-          <motion.div initial={{ opacity: 0, x: -50 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8, delay: 0.5 }} className="glass-card rounded-xl p-6">
+          <motion.div initial={{ opacity: 0, x: -50 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8, delay: 0.5 }} className="glass-card bg-warm-100/80 backdrop-blur-sm rounded-xl p-6">
             <h3 className="text-xl font-display font-semibold text-primary-900 mb-4 flex items-center gap-2">
               <ChartBarIcon className="w-5 h-5 text-primary-600" /> Violencia por Grupo Etario en Colombia
             </h3>
@@ -128,28 +139,58 @@ const Statistics = () => {
             </div>
           </motion.div>
 
-          {/* Pie */}
-          <motion.div initial={{ opacity: 0, x: 50 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8, delay: 0.7 }} className="glass-card rounded-xl p-6">
+          {/* Gráfico de barras de orientación sexual */}
+          <motion.div initial={{ opacity: 0, x: 50 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8, delay: 0.7 }} className="glass-card bg-warm-100/80 backdrop-blur-sm rounded-xl p-6">
             <h3 className="text-xl font-display font-semibold text-primary-900 mb-4 flex items-center gap-2">
-              <ExclamationTriangleIcon className="w-5 h-5 text-primary-600" /> Casos Denunciados vs No Denunciados
+              <ExclamationTriangleIcon className="w-5 h-5 text-primary-600" /> Distribución por Orientación Sexual
             </h3>
             <div className="h-80">
               <ResponsiveContainer width="100%" height="100%">
-                <PieChart margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
-                  <Pie data={reportingData} cx="50%" cy="50%" outerRadius={100} dataKey="value" label={({ name, value }) => `${name}: ${value}%`} labelLine={false} fontSize={12}>
-                    {reportingData.map((entry, index) => <Cell key={`cell-${index}`} fill={entry.color} />)}
-                  </Pie>
-                  <Tooltip contentStyle={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px', fontSize: '14px' }} />
-                </PieChart>
+                <BarChart data={reportingData} margin={{ top: 20, right: 30, left: 20, bottom: 80 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                  <XAxis 
+                    dataKey="name" 
+                    stroke="#64748b" 
+                    fontSize={11} 
+                    angle={-45}
+                    textAnchor="end"
+                    height={100}
+                    interval={0}
+                  />
+                  <YAxis 
+                    stroke="#64748b" 
+                    fontSize={12} 
+                    label={{ value: 'Porcentaje (%)', angle: -90, position: 'insideLeft' }} 
+                  />
+                  <Tooltip 
+                    contentStyle={{ 
+                      backgroundColor: '#f8fafc', 
+                      border: '1px solid #e2e8f0', 
+                      borderRadius: '8px', 
+                      fontSize: '14px' 
+                    }} 
+                    formatter={(value) => [`${value}%`, 'Porcentaje']} 
+                    labelFormatter={(label) => `Orientación: ${label}`} 
+                  />
+                  <Bar 
+                    dataKey="value" 
+                    radius={[4, 4, 0, 0]}
+                    fill="#475569"
+                  >
+                    {reportingData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={entry.color} />
+                    ))}
+                  </Bar>
+                </BarChart>
               </ResponsiveContainer>
             </div>
           </motion.div>
         </div>
 
         {/* Departamentos */}
-        <motion.div initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.8 }} className="glass-card rounded-xl p-6 mb-12">
+        <motion.div initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.8 }} className="glass-card bg-warm-100/80 backdrop-blur-sm rounded-xl p-6 mb-12">
           <h3 className="text-xl font-display font-semibold text-primary-900 mb-4 flex items-center gap-2">
-            <MapPinIcon className="w-5 h-5 text-primary-600" /> Casos por Departamento (Top 8)
+            <MapPinIcon className="w-5 h-5 text-primary-600" /> Casos por Departamento (Top 10)
           </h3>
           <div className="h-80">
             <ResponsiveContainer width="100%" height="100%">
@@ -172,9 +213,9 @@ const Statistics = () => {
         </motion.div>
 
         {/* Tendencia */}
-        <motion.div initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 1 }} className="glass-card rounded-xl p-6 mb-12">
+        <motion.div initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 1 }} className="glass-card bg-warm-100/80 backdrop-blur-sm rounded-xl p-6 mb-12">
           <h3 className="text-xl font-display font-semibold text-primary-900 mb-4 flex items-center gap-2">
-            <MapPinIcon className="w-5 h-5 text-primary-600" /> Evolución de la Violencia en Colombia (2019-2023)
+            <MapPinIcon className="w-5 h-5 text-primary-600" /> Evolución de la Violencia en Colombia (2013-2023)
           </h3>
           <div className="h-80">
             <ResponsiveContainer width="100%" height="100%">
@@ -182,9 +223,8 @@ const Statistics = () => {
                 <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
                 <XAxis dataKey="year" stroke="#64748b" fontSize={12} />
                 <YAxis stroke="#64748b" fontSize={12} />
-                <Tooltip contentStyle={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px', fontSize: '14px' }} formatter={(value, name) => [`${Number(value).toLocaleString()}`, name === 'cases' ? 'Casos Totales' : 'Feminicidios']} />
+                <Tooltip contentStyle={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px', fontSize: '14px' }} formatter={(value) => [`${Number(value).toLocaleString()}`, 'Casos Registrados']} />
                 <Line type="monotone" dataKey="cases" stroke="#475569" strokeWidth={3} dot={{ fill: '#475569', strokeWidth: 2, r: 6 }} activeDot={{ r: 8 }} name="cases" />
-                <Line type="monotone" dataKey="feminicidios" stroke="#ea7520" strokeWidth={3} dot={{ fill: '#ea7520', strokeWidth: 2, r: 6 }} activeDot={{ r: 8 }} name="feminicidios" />
               </LineChart>
             </ResponsiveContainer>
           </div>
