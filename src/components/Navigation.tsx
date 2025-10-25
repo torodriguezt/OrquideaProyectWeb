@@ -70,21 +70,6 @@ const Navigation = ({ activeSection }: NavigationProps) => {
               ))}
             </div>
 
-            {/* Logo MinCiencias - Esquina superior derecha */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              className="hidden md:block"
-            >
-              <img 
-                src="/Orquidea-AplicativoWeb/LogoMinCiencias.png" 
-                alt="MinCiencias" 
-                className="h-28 w-auto object-contain transform rotate-90"
-                style={{ transformOrigin: 'center' }}
-              />
-            </motion.div>
-
             {/* Mobile Menu Button */}
             <motion.button
               whileHover={{ scale: 1.05 }}
