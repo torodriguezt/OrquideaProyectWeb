@@ -83,7 +83,7 @@ const Hero = () => {
               className="mb-8"
             >
               <img 
-                src="/OrquideaProyectWeb/Identificador-Programa-Orquideas.png" 
+                src="/Orquidea-AplicativoWeb/Identificador-Programa-Orquideas.png" 
                 alt="Programa Orquídea" 
                 className="mx-auto w-64 md:w-80 lg:w-96 h-auto drop-shadow-2xl"
               />

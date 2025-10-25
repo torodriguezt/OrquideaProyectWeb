@@ -78,7 +78,7 @@ const Navigation = ({ activeSection }: NavigationProps) => {
               className="hidden md:block"
             >
               <img 
-                src="/OrquideaProyectWeb/LogoMinCiencias.png" 
+                src="/Orquidea-AplicativoWeb/LogoMinCiencias.png" 
                 alt="MinCiencias" 
                 className="h-28 w-auto object-contain transform rotate-90"
                 style={{ transformOrigin: 'center' }}
