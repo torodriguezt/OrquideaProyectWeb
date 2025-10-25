@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ChevronDownIcon, HeartIcon, ShieldCheckIcon } from '@heroicons/react/24/outline'
+import { ChevronDownIcon, ShieldCheckIcon } from '@heroicons/react/24/outline'
 
 const Hero = () => {
   const scrollToNext = () => {
@@ -75,7 +75,20 @@ const Hero = () => {
             variants={itemVariants}
             className="mb-8"
           >
-            <HeartIcon className="w-16 h-16 mx-auto mb-6 text-accent-500" />
+            {/* Logo del Programa Orquídea */}
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="mb-8"
+            >
+              <img 
+                src="/Orquidea-AplicativoWeb/Identificador-Programa-Orquideas.png" 
+                alt="Programa Orquídea" 
+                className="mx-auto w-64 md:w-80 lg:w-96 h-auto drop-shadow-2xl"
+              />
+            </motion.div>
+            
             <h1 className="text-5xl md:text-7xl font-display font-bold mb-4">
               <span className="gradient-text">
                 

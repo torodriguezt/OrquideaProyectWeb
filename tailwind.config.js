@@ -6,6 +6,18 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Nunito Sans', 'Verdana', 'sans-serif'],
+        display: ['Nunito Sans', 'Verdana', 'sans-serif'],
+      },
+      fontWeight: {
+        light: '300',
+        normal: '400',
+        semibold: '600',
+        bold: '700',
+        extrabold: '800',
+        black: '900',
+      },
       colors: {
         primary: {
           50: '#f8fafc',
